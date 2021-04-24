@@ -1,10 +1,13 @@
-.PHONY = all
+.PHONY = all clean
 
 CC = gcc
-OBJS = main.c
+SRCS = $(shell find -name "*.c")
 OBJ_NAME = cnake
 COMPILER_FLAGS = -Wall
 LINKER_FLAGS = -lSDL2
 
-all: main.c
-	$(CC) $(OBJS) $(COMPILER_FLAGS) -o $(OBJ_NAME) $(LINKER_FLAGS)
+all: $(SRCS)
+	$(CC) $(SRCS) $(COMPILER_FLAGS) -o $(OBJ_NAME) $(LINKER_FLAGS)
+
+clean:
+	rm cnake
