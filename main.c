@@ -36,7 +36,7 @@ int main(int argc, char** argv)
     if (renderer == NULL) {
         quit();
     }
-    SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0x00); // Black
+    SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, SDL_ALPHA_OPAQUE); // Black
     SDL_RenderClear(renderer);
 
     // Game Loop
