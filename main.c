@@ -52,6 +52,7 @@ int main(int argc, char** argv)
         // Make calculations
 
         // Redraw window
+        SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, SDL_ALPHA_OPAQUE);
         SDL_RenderClear(renderer);
         SDL_RenderPresent(renderer);
     }
