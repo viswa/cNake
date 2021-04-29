@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include "snake.h"
+#include "game.h"
+
 const int SC_WIDTH = 640;
 const int SC_HEIGHT = 480;
 
@@ -39,6 +42,7 @@ int main(int argc, char** argv)
     SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, SDL_ALPHA_OPAQUE); // Black
     SDL_RenderClear(renderer);
 
+    snake* crawler = make_snake();
     // Game Loop
     while (true) {
         SDL_Event e;
@@ -54,6 +58,7 @@ int main(int argc, char** argv)
         // Redraw window
         SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, SDL_ALPHA_OPAQUE);
         SDL_RenderClear(renderer);
+        draw_snake(&renderer, crawler);
         SDL_RenderPresent(renderer);
     }
 
