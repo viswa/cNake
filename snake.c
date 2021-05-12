@@ -9,9 +9,13 @@ snake* make_snake(void)
 {
     snake* new_snake = NULL;
     new_snake = (snake*) malloc(sizeof(snake));
-    new_snake->head = make_cell(10, 10);
-    new_snake->head->next = make_cell(10, 20);
-    new_snake->head->next->next = make_cell(10, 30);
+    if (new_snake == NULL) {
+        return NULL;
+    }
+    new_snake->direction = DOWN;
+    new_snake->head = new_snake->tail = make_cell(30, 30);
+    enqueue_cell(new_snake, 30, 20);
+    enqueue_cell(new_snake, 30, 10);
     return new_snake;
 }
 
