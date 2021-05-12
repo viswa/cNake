@@ -24,6 +24,7 @@ cell* enqueue_cell(snake* s, int x, int y)
     }
     s->head->prev = new_cell;
     new_cell->next = s->head;
+    s->head = new_cell;
     return new_cell;
 }
 
