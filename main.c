@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "snake.h"
 #include "game.h"
+#include "snake.h"
 
 _Noreturn void quit()
 {
@@ -39,10 +39,10 @@ int main(int argc, char** argv)
     SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, SDL_ALPHA_OPAQUE); // Black
     SDL_RenderClear(renderer);
 
-    snake* crawler = make_snake();
+    snake* crawler = make_snake(); // snake object
+    SDL_Event e;
     // Game Loop
     while (true) {
-        SDL_Event e;
         // Process Events
         if (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT) {

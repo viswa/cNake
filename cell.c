@@ -1,4 +1,5 @@
 #include <stdlib.h>
+
 #include "cell.h"
 
 cell* make_cell(int x, int y)

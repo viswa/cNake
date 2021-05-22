@@ -3,8 +3,8 @@
 
 #include <SDL2/SDL.h>
 
-#include "cell.h"
 #include "game.h"
+#include "cell.h"
 
 #define INITIAL_SNAKE_LEN 10
 #define SNAKE_WIDTH 10

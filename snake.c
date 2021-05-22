@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
-#include "cell.h"
 #include "game.h"
+#include "cell.h"
 #include "snake.h"
 
 // make_snake populates snake cells with an initial configuration
@@ -41,6 +41,7 @@ void dequeue_cell(snake* s)
     free(tail);
 }
 
+// draw_snake calculates the rectangles of snake and draws them to renderer
 void draw_snake(SDL_Renderer** renderer, snake* s)
 {
     cell* iter = s->head;
