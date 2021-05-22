@@ -6,9 +6,6 @@
 #include "snake.h"
 #include "game.h"
 
-const int SC_WIDTH = 640;
-const int SC_HEIGHT = 480;
-
 _Noreturn void quit()
 {
     fprintf(stderr, "cNake could not be lanuched");

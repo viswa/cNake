@@ -8,6 +8,9 @@ typedef enum {
     RIGHT,
 } DIRECTION;
 
+#define SC_WIDTH 640
+#define SC_HEIGHT 480
+
 _Noreturn void quit();
 
 #endif
