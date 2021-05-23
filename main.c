@@ -47,10 +47,39 @@ int main(int argc, char** argv)
         if (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT) {
                 break;
+            } else if (e.type == SDL_KEYDOWN) {
+                switch (e.key.keysym.sym) {
+                    case SDLK_UP: {
+                        if (crawler->direction != DOWN) {
+                            crawler->direction = UP;
+                            move(crawler);
+                        }
+                    } break;
+                    case SDLK_DOWN: {
+                        if (crawler->direction != UP) {
+                            crawler->direction = DOWN;
+                            move(crawler);
+                        }
+                    } break;
+                    case SDLK_LEFT: {
+                        if (crawler->direction != RIGHT) {
+                            crawler->direction = LEFT;
+                            move(crawler);
+                        }
+                    } break;
+                    case SDLK_RIGHT: {
+                        if (crawler->direction != LEFT) {
+                            crawler->direction = RIGHT;
+                            move(crawler);
+                        }
+                    } break;
+                }
             }
         }
 
         // Make calculations
+        move(crawler);
+        SDL_Delay(50);
 
         // Redraw window
         SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, SDL_ALPHA_OPAQUE);

@@ -41,6 +41,40 @@ void dequeue_cell(snake* s)
     free(tail);
 }
 
+// move updates the s object parameters to simulate motion
+void move(snake* s)
+{
+    int new_x, new_y; // Updated head position
+    new_x = s->head->x;
+    new_y = s->head->y;
+    switch (s->direction) {
+        case UP: {
+            new_y -= SNAKE_WIDTH;
+        } break;
+        case DOWN: {
+            new_y += SNAKE_WIDTH;
+        } break;
+        case LEFT: {
+            new_x -= SNAKE_WIDTH;
+        } break;
+        case RIGHT: {
+            new_x += SNAKE_WIDTH;
+        } break;
+    }
+    if (new_x >= SC_WIDTH)
+        new_x = 0;
+    else if (new_x < 0)
+        new_x = SC_WIDTH - SNAKE_WIDTH;
+
+    if (new_y >= SC_HEIGHT)
+        new_y = 0;
+    else if (new_y < 0)
+        new_y = SC_HEIGHT - SNAKE_WIDTH;
+
+    dequeue_cell(s);
+    enqueue_cell(s, new_x, new_y);
+}
+
 // draw_snake calculates the rectangles of snake and draws them to renderer
 void draw_snake(SDL_Renderer** renderer, snake* s)
 {

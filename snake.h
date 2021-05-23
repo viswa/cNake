@@ -25,6 +25,7 @@ struct snake {
 snake* make_snake(void);
 cell* enqueue_cell(snake* s, int x, int y);
 void dequeue_cell(snake* s);
+void move(snake* s);
 void draw_snake(SDL_Renderer** renderer, snake* s);
 
 #endif
